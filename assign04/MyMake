@@ -1,0 +1,16 @@
+all: Assign4Main.exe Assign4WordList.exe 
+
+Assign4Main.exe: SetTester.o
+	g++ SetTester.o -std=c++11 -o Assign4Main.exe
+
+SetTester.o: SetTester.cpp
+	g++ -std=c++11 -c SetTester.cpp
+
+Assign4WordList.exe: WordList.o
+	g++ WordList.o -std=c++11 -o Assign4WordList.exe
+
+WordList.o: WordList.cpp
+	g++ -std=c++11 -c WordList.cpp
+
+clean:
+	del Assign4Main.exe Assign4WordList.exe SetTester.o WordList.o
